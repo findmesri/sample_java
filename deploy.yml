@@ -1,0 +1,8 @@
+---
+- hosts: kops
+  become: yes
+  tasks:
+    - name: Copy file with owner and permissions
+      copy:
+        src: /var/lib/jenkins/workspace/k8s-pipe/target
+        dest: /opr/project
