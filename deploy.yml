@@ -5,4 +5,7 @@
     - name: Copy file with owner and permissions
       copy:
         src: /var/lib/jenkins/workspace/k8s-pipe/target
-        dest: /opr/project
+        dest: /opt/project
+    - name: build docker image
+      command: docker build -t findmesri/k8proj /opt/project
+      
