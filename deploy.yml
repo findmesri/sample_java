@@ -12,5 +12,5 @@
     - name: build docker image
       command: docker build -t findmesri/k8proj /opt/project
     - name: cont
-      command: docker run -d --name app -p 8090:8080 findmesri/k8proj
+      command: kubectl apply -f /opt/project/kube.yml
       
