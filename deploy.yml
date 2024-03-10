@@ -2,6 +2,9 @@
 - hosts: kops
   become: yes
   tasks:
+    - name: remove previous war file
+      command: rm -rf /opt/project/*.war
+      ignore_errors: true
     - name: Copy file with owner and permissions
       copy:
         src: /var/lib/jenkins/workspace/k8s-pipe/
